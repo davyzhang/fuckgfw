@@ -16,30 +16,32 @@ l = logging.getLogger('dlmeter')
 
 svrs =[
 '04',
-'27',
-'14',
-'25',
 '05',
-'09',
 '06',
+'07',
+'08',
+'09',
 '10',
+'11',
 '13',
+'14',
+'15',
+'16',
+'17',
+'19',
+'21',
+'22',
 '23',
 '24',
-'11',
-'17',
-'22',
-'19',
-'16',
-'21',
-'07',
-'32',
-'15',
+'25',
+'26',
+'27',
 '31',
+'32',
 '33',
 '34',
-'08',
-'26'      
+'35',
+'38'     
 ]
 
 TEST_SIZE = 1024*128
@@ -68,7 +70,7 @@ def download(url):
         et = time.time()
         return et - st
     except URLError as e :
-        l.info('%s open url error %r',url,e.reason)
+        l.info('%s open url error %r',url,e)
     except socket.timeout as e:
         l.info('%s read time out ',url)
     else:
