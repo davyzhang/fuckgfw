@@ -55,7 +55,7 @@ def make_list(tags):
     result = []
     for snum in tags:
         tag = str(snum)
-        url = 'http://s'+tag+'.flyssh.com/10mb.bin'
+        url = 'http://s'+tag+'.flyssh.net/10mb.bin'
         result.append(url)
     return result
 
