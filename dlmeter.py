@@ -455,7 +455,7 @@ def main_ping():
                 no_packet_lost.append(p)
             all_servers.append(p)
         except:
-            print '%s not reachable'%host
+            print '%s not reachable'%host,'try sudo '
     print '===================== conclusion ======================'
     if len(no_packet_lost) <= 0:
         print 'no stable server found, all lost packets'

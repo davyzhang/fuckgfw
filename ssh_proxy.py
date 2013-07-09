@@ -16,11 +16,12 @@ bind_port = 7070
 user_name = 'ssh_account'
 password = 'ssh_password'
 
-shl = 'ssh -f -N -g -D %(bind_ip)s:%(bind_port)s %(user_name)s@%(server)s'%{'bind_ip':bind_ip,
+shl = 'ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no\
+ -p %(port)d -f -N -g -D %(bind_ip)s:%(bind_port)s %(user_name)s@%(server)s'%{'bind_ip':bind_ip,
                                                                             'bind_port':bind_port,
                                                                             'server':server,
-                                                                            'user_name':user_name}
-token = '%(user_name)s@%(server)s'%{'user_name':user_name,'server':server}
+                                                                            'user_name':user_name,
+                                                                            'port':port}token = '%(user_name)s@%(server)s'%{'user_name':user_name,'server':server}
 
 
 def start_tunnel(shl,password):
